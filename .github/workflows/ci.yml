@@ -15,9 +15,8 @@ jobs:
         run: |
           curl --location 'https://api.render.com/v1/services/srv-ckhqk9i12bvs738r5ud0/deploys' \
           --header 'accept: application/json' \
-          --header 'authorization: Bearer $render_api_key"' \
+          --header 'authorization: Bearer $render_api_key' \
           --header 'content-type: application/json' \
-          --header 'Cookie: __cf_bm=FdJmbQyIxv8VYbiqVWQLM8v6jaDP4cK4C_WNS912T_g-1697606676-0-AWqn5KC9QBJLs6Y5RvLCmx3hhLtHKx28MfMWAr9XN3tBraKxFiEnoluWIDvD649T6yLWueeqMpILa/xU91bR9Lw=' \
           --data '{
               "clear-cache": true
           }'
