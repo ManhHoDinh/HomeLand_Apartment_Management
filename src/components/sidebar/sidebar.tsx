@@ -8,6 +8,7 @@ export const Sidebar = ({
   show,
   onClose,
   header,
+  drawerClass,
 }: {
   className?: string;
   style?: CSSProperties;
@@ -16,30 +17,31 @@ export const Sidebar = ({
   visibilityMode?: string;
   show?: boolean;
   onClose?: Function;
+  drawerClass?: string;
 }) => {
   if (visibilityMode == "hide" && show == undefined && onClose)
     throw SyntaxError(
       "When visibilyMode is set to hide, You has to define show and onClose parameter"
     );
-  return visibilityMode == "hide" ? (
-    <Offcanvas
-      className={`${styles.sidebarContainer} ${className}`}
-      show={show}
-      onHide={() => onClose!()}
-      placement="start"
-    >
-      <Offcanvas.Header closeButton>{header}</Offcanvas.Header>
-      <Offcanvas.Body>{children}</Offcanvas.Body>
-    </Offcanvas>
-  ) : (
-    <div
-      className={`${styles.sidebarContainer} ${className}`}
-      style={{
-        visibility: visibilityMode == "hide" && !show ? "hidden" : "visible",
-      }}
-    >
-      <div>{header}</div>
-      {children}
-    </div>
+  return (
+    <>
+      {visibilityMode == "hide" ? (
+        <Offcanvas
+          show={show}
+          
+        >
+          <Offcanvas.Header closeButton>{header}</Offcanvas.Header>
+          <Offcanvas.Body className={`${drawerClass ?? ""}`}>
+            {children}
+          </Offcanvas.Body>
+        </Offcanvas>
+      ) : (
+        <></>
+      )}
+      <div className={`${styles.sidebarContainer} ${className}`}>
+        <div>{header}</div>
+        {children}
+      </div>
+    </>
   );
 };
