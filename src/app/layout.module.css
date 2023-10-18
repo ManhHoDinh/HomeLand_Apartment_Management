@@ -1,0 +1,96 @@
+.sidebar {
+    width: 20%;
+    background-color: #d7e2ff;
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .sidebar {
+        visibility: hidden;
+    }
+}
+
+.sidebarBody {
+    margin-top: 3rem;
+}
+
+.sidebarButton {
+    position: relative;
+    height: 4rem;
+    width: 100%;
+    border-radius: 0 2rem 2rem 0;
+    margin-bottom: 3rem;
+    transition: all ease .5s;
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+    font-size: 1.4rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 1.5rem;
+    font-weight: 400;
+}
+
+.sidebarButton svg {
+    margin-right: 10px;
+}
+
+.sidebarButton svg path {
+    fill: black;
+}
+
+.sidebarButton:hover {
+    width: 110%;
+    color: white;
+    background-color: #2864FF;
+    padding-left: 2.5rem;
+    font-weight: bold;
+}
+
+.sidebarButton:hover svg path {
+    fill: white;
+}
+
+.current {
+    color: white;
+    background-color: #2864FF;
+    padding-left: 2.5rem;
+    font-weight: bold;
+}
+
+.current svg path {
+    fill: white;
+}
+
+.drawer {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 1400px) {
+    .drawerButton {
+        visibility: hidden;
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    .drawerButton {
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 1rem;
+        background-color: transparent;
+        border-style: none;
+    }
+
+}
+
+.header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
