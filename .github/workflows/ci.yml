@@ -1,0 +1,24 @@
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          render_api_key: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl --request POST \
+              --url https://api.render.com/v1/services/srv-ckhqk9i12bvs738r5ud0/deploys \
+              --header 'accept: application/json' \
+              --header 'authorization: Bearer $render_api_key' \
+              --header 'content-type: application/json' \
+              --data '
+          {
+            "clearCache": "clear"
+          }
