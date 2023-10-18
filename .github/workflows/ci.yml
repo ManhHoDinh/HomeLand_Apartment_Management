@@ -16,5 +16,5 @@ jobs:
           --header "authorization: Bearer rnd_K3CdfZGN031DoGjdbotuT4ZDhGxh" \
           --header 'content-type: application/json' \
           --data '{
-              "clear-cache": true
+              "clearCache": "clear"
           }'
