@@ -13,6 +13,7 @@ jobs:
         env:
           render_api_key: ${{ secrets.RENDER_API_KEY }}
         run: |
+          echo $render_api_key
           curl --location 'https://api.render.com/v1/services/srv-ckhqk9i12bvs738r5ud0/deploys' \
           --header 'accept: application/json' \
           --header 'authorization: Bearer $render_api_key' \
